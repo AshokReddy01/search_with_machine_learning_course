@@ -187,7 +187,7 @@ def create_query(user_query, click_prior_query, filters, sort="_score", sortDir=
         query_obj["_source"] = source
     return query_obj
 
-def create_query(user_query, click_prior_query, filters, sort="_score", sortDir="desc", size=10, source=None):
+def create_vector_query(user_query, click_prior_query, filters, sort="_score", sortDir="desc", size=10, source=None):
     text=model2.encode([user_query])[0].tolist()
     return {
         "size":size,
